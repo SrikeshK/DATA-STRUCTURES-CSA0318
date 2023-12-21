@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+	int a[]={1,2,3,4,5,6,7};
+	int n=sizeof(a)/sizeof(a[0]);
+	int Key=4,i,c=0,b;
+	printf("Element to be Found : %d \n",Key);
+	for(i=0;i<n;i++)
+	{
+	  if(a[i]==Key)
+	   {
+	    c++;
+	    b=i;
+	   }
+   }
+   if(c==0)
+   printf("The Element is Not Found ! ");
+   else
+   printf("The Element Is Found At Position : %d ",b);
+	 }
