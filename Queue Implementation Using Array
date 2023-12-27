@@ -1,33 +1,67 @@
-#include<stdio.h>
+#include <stdio.h>
 int max=5;
+int rear=-1;
+int front=-1;
 int q[5];
-int rear=-1,front=-1;
-void enq(int x)
+int isfull()
 {
- int data=x;
- rear=rear+1; 
- q[rear]=data;
- return 0;
+    if(rear>4)
+    return 1;
+    else
+    return 0;
 }
-void deq()
-{   int i;
-    front=front+1;
-    for(i=0;i<=4;i++)
+int empty()
+{
+    if(rear==-1&&front==-1)
+    return 1;
+    else
+    return 0;
+}
+int enq(int x)
+{
+    if(!isfull())
     {
-        q[i]=q[i+1];
+    rear=rear+1;
+    q[rear]=x;
     }
+    else
+    printf("Queue Is Full ! ");
+    return 0;
+}
+int deq()
+{
+   if(!empty())
+   {
+    front=front+1;
+    q[front]=0;
+   }
+   else
+   printf("Queue is Empty ");
     return 0;
 }
 int main()
 {
-  enq(5);
-  enq(6);
-  enq(7);
-  enq(8);
-  deq();
-  deq();
-  printf("%d ",q[0]);
-  printf("%d ",q[1]);
-  deq();
-  printf("%d ",q[0]);
+   enq(12);
+   enq(23);
+   enq(34);
+   enq(45);
+   enq(56);
+   enq(47);
+   enq(78);
+    deq();
+    deq();
+    deq();
+   
+    printf("\nRear : %d \n",rear);
+    printf("Front : %d \n",front);  
+    for(int i=0;i<=4;i++)
+    {
+        if(q[i]!=0)
+        {
+            printf("%d ",q[i]);
+        }
+    }
+    
+    return 0;
+    
 }
