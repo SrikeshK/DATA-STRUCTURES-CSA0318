@@ -5,7 +5,7 @@ int front=-1;
 int q[5];
 int isfull()
 {
-    if(rear>4)
+    if(rear>=4)
     return 1;
     else
     return 0;
@@ -48,9 +48,9 @@ int main()
    enq(56);
    enq(47);
    enq(78);
-    deq();
-    deq();
-    deq();
+  deq();
+  deq();
+  deq();
    
     printf("\nRear : %d \n",rear);
     printf("Front : %d \n",front);  
@@ -65,3 +65,4 @@ int main()
     return 0;
     
 }
+
